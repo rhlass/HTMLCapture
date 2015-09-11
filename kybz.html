@@ -1,0 +1,540 @@
+﻿
+
+
+<HTML>
+<HEAD>
+<TITLE>客运统一列车编组信息查询系统</TITLE>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<link rel=stylesheet type="text/css" href="/kybz/html/css/common.css">
+<script language=javascript src=/kybz/html/js/common.js></script>
+<style>
+td{
+font-size:12px;
+line-height:25px;
+}
+</style>
+<script>
+function  trim(str)
+{
+    for(var i=0;i<str.length&&str.charAt(i)==" ";i++);
+    for(var j=str.length;j>0&&str.charAt(j-1)==" ";j--);
+    if(i>j)  return "";  
+    return str.substring(i,j);  
+} 
+function trimData(str){
+  var dispNum;
+  if(trim(str)!=""&&!isNaN(str)) {
+    num =  parseFloat(str);
+	tmpNum = num.toFixed(1);
+    if(tmpNum==num)
+      dispNum = tmpNum;
+    else dispNum = num;
+  }
+  else dispNum = str;
+  document.write(dispNum);
+}
+</script>
+</HEAD>
+<BODY >
+<hr style="color:#000000;" size=1 noshade>
+<div align="right">
+  <input type="button" name=getback onClick="history.go(-1)" class="btn" value="返回">
+  <input name="button" type="button" class=btn onClick="javascript:print();" value="打印当前页">
+  <script>
+ 
+  function downloadfile(){
+     var tmpstr = 'AZZF001.0902@CFBZ@1304@F@1@0@ZZF@BXP@ZZF@20150902072000@20150902061152@0@阎建民@0@0@0@0@版本1.0ssssLC@19@19@0@0@0@0@0@0@0@0@19@899.00@146.00@1045.00@45.60@ssssCL@1@YW25G@679188@66@47.30@6.50@2.40@F@F@0@0@0@ssssCL@2@YW25G@679915@66@48.20@7.20@2.40@F@F@0@0@0@ssssCL@3@YW25G@679709@66@47.30@6.50@2.40@F@F@0@0@0@ssssCL@4@YW25G@679701@66@47.30@6.50@2.40@F@F@0@0@0@ssssCL@5@YW25G@676854@66@47.70@7.00@2.40@F@F@0@0@0@ssssCL@6@YW25G@679216@66@47.30@6.50@2.40@F@F@0@0@0@ssssCL@7@YW25G@679716@66@47.30@6.50@2.40@F@F@0@0@0@ssssCL@8@YW25G@678353@66@47.80@6.50@2.40@F@F@0@0@0@ssssCL@9@RW25G@555090@36@48.70@4.30@2.40@F@F@0@0@0@ssssCL@10@RW25G@554531@36@49.10@4.30@2.40@F@F@0@0@0@ssssCL@11@CA25G@893853@0@46.20@0.00@2.40@F@F@0@0@0@ssssCL@12@YZ25G@352403@118@46.70@10.50@2.40@F@F@0@0@0@ssssCL@13@YZ25G@352400@118@46.70@10.50@2.40@F@F@0@0@0@ssssCL@14@YZ25G@353271@118@46.90@10.50@2.40@F@F@0@0@0@ssssCL@15@YZ25G@353257@118@46.90@10.50@2.40@F@F@0@0@0@ssssCL@16@YZ25G@352258@118@46.90@10.50@2.40@F@F@0@0@0@ssssCL@17@YZ25G@352129@118@47.20@10.50@2.40@F@F@0@0@0@ssssCL@18@YZ25G@353278@118@46.90@10.50@2.40@F@F@0@0@0@ssssCL@19@YZ25G@353285@118@46.90@10.50@2.40@F@F@0@0@0@ssss';
+     //document.write(tmpstr);
+     window.navigate('/kybz/jsp/filedownload.jsp?mqfilename=AZZF001.0902&filestr='+encodeURIComponent(tmpstr))
+  }
+  </script>
+  <input type="button" name=getback2 onClick="downloadfile()" class="btn" value="编组文件下载">
+  
+</div>
+<hr style="color:#000000;" size=1 noshade>
+<table width="100%">
+<tr>
+        <td width="24%">车&nbsp;&nbsp;次:1304</td>		
+		<td width="29%">始发日期:2015-09-02 07:20</td>
+		<td width="24%"><!--运行时间:--></td>
+	<td width="23%">&nbsp;</td>
+  </tr>
+      <tr>
+        <td>担当局:郑</td>
+		<td>车体组号:1</td>
+		<td>始发站:郑州</td>
+		<td>终到站:北京西</td>
+      </tr>
+	  <tr>
+        <td>报告站:郑州</td>
+		<td>发车时分:07:20</td>
+		<td>制表人:阎建民</td>
+		<td>检查人:0</td>
+      </tr>
+</table>
+<table width=100% cellpadding=1 cellspacing=0 border=1 class=listtable>
+<tr><th width=6% colspan=1  class=th align=center>顺号</th>
+        <th width=10% height="24" class=th align=center>车种</th>
+        <th width=10% class=th align=center>车号</th>
+        <th width=8% class=th align=center>定员</th>
+        <th width=8% class=th align=center>自重</th>
+		<th width=8% height="24" class=th align=center>载重</th>
+        <th width=8% class=th align=center>换长</th>
+        <th width=8% class=th align=center>配属企业</th>
+        <th width=8% class=th align=center>支配企业</th>
+		<th width=6% height="24" class=th align=center>摘挂</th>
+        <th width=10% class=th align=center>记事</th>
+</tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">1</td>
+<td align=center>YW25G</td>
+<td align=center>679188</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.30')</script></td>
+<td align=center><script>trimData('6.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">2</td>
+<td align=center>YW25G</td>
+<td align=center>679915</td>
+<td align=center>66</td>
+<td align=center><script>trimData('48.20')</script></td>
+<td align=center><script>trimData('7.20')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">3</td>
+<td align=center>YW25G</td>
+<td align=center>679709</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.30')</script></td>
+<td align=center><script>trimData('6.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">4</td>
+<td align=center>YW25G</td>
+<td align=center>679701</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.30')</script></td>
+<td align=center><script>trimData('6.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">5</td>
+<td align=center>YW25G</td>
+<td align=center>676854</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.70')</script></td>
+<td align=center><script>trimData('7.00')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">6</td>
+<td align=center>YW25G</td>
+<td align=center>679216</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.30')</script></td>
+<td align=center><script>trimData('6.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">7</td>
+<td align=center>YW25G</td>
+<td align=center>679716</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.30')</script></td>
+<td align=center><script>trimData('6.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">8</td>
+<td align=center>YW25G</td>
+<td align=center>678353</td>
+<td align=center>66</td>
+<td align=center><script>trimData('47.80')</script></td>
+<td align=center><script>trimData('6.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">9</td>
+<td align=center>RW25G</td>
+<td align=center>555090</td>
+<td align=center>36</td>
+<td align=center><script>trimData('48.70')</script></td>
+<td align=center><script>trimData('4.30')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">10</td>
+<td align=center>RW25G</td>
+<td align=center>554531</td>
+<td align=center>36</td>
+<td align=center><script>trimData('49.10')</script></td>
+<td align=center><script>trimData('4.30')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">11</td>
+<td align=center>CA25G</td>
+<td align=center>893853</td>
+<td align=center>0</td>
+<td align=center><script>trimData('46.20')</script></td>
+<td align=center><script>trimData('0.00')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">12</td>
+<td align=center>YZ25G</td>
+<td align=center>352403</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.70')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">13</td>
+<td align=center>YZ25G</td>
+<td align=center>352400</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.70')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">14</td>
+<td align=center>YZ25G</td>
+<td align=center>353271</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.90')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">15</td>
+<td align=center>YZ25G</td>
+<td align=center>353257</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.90')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">16</td>
+<td align=center>YZ25G</td>
+<td align=center>352258</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.90')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">17</td>
+<td align=center>YZ25G</td>
+<td align=center>352129</td>
+<td align=center>118</td>
+<td align=center><script>trimData('47.20')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">18</td>
+<td align=center>YZ25G</td>
+<td align=center>353278</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.90')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)"><td align=center height="24">19</td>
+<td align=center>YZ25G</td>
+<td align=center>353285</td>
+<td align=center>118</td>
+<td align=center><script>trimData('46.90')</script></td>
+<td align=center><script>trimData('10.50')</script></td>
+<td align=center><script>trimData('2.40')</script></td>
+<td align=center>郑</td><td align=center>郑</td>
+<td align=center>基</td>
+<td align=center>&nbsp;</td></tr>
+
+
+<tr class=th><th align=center height="24">合计</th>
+<td align=center>&nbsp;</td><td align=center>&nbsp;</td>
+<th align=center>1544&nbsp;</th><th align=center>&nbsp;899.00</th>
+<th align=center>&nbsp;146.00</th><th align=center>&nbsp;45.60</th>
+<td align=center>&nbsp;</td><td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td><th align=center>&nbsp;</th>
+</tr>
+</table>
+<table width=100% cellpadding=1 cellspacing=0 border=1 class=listtable>
+<tr ><td colspan="14" align=center height="24">自始发站出发及途中站摘挂后列车编组</td>
+</tr>
+<tr><th width=10% colspan=1 rowspan="3"  class=th align=center>站名</th>
+        <th width=32% height="24" colspan="5" class=th align=center>客车辆数</th>
+        <th width=8% rowspan="3" class=th align=center>货车辆数</th>
+        <th width=8% rowspan="3" class=th align=center>其他辆数</th>
+        <th width=8% rowspan="3" class=th align=center>合计辆数</th>
+		<th width=7% rowspan="3" height="24" class=th align=center>自重</th>
+        <th width=7% rowspan="3" class=th align=center>载重</th>
+        <th width=7% rowspan="3" class=th align=center>总重</th>
+        <th width=6% rowspan="3" class=th align=center>换长</th>
+        <th width=7% rowspan="3" class=th align=center>记事</th>
+</tr>
+<tr><th width=5%  rowspan="2"  class=th align=center>合计</th>
+        <th width=27% height="24" colspan="4" class=th align=center>其中</th>
+</tr>
+<tr><td width=7% colspan=1  class=th align=center>基本编组</td>
+        <td width=7% height="24" class=th align=center>加挂企业1及辆数</td>
+        <td width=7% class=th align=center>加挂企业2及辆数</td>
+        <td width=6% class=th align=center>其它客车</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center>郑州</td>
+<td align=center>19</td>
+<td align=center>19</td>
+<td align=center>&nbsp;0</td>
+<td align=center>&nbsp;0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>19</td>
+<td align=center><script>trimData('899.00')</script></td>
+<td align=center><script>trimData('146.00')</script></td>
+<td align=center><script>trimData('1045.00')</script></td>
+<td align=center><script>trimData('45.60')</script></td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center>中铁快运公司</td>
+<td align=center> &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center >集装箱公司</td>
+<td align=center> &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center >特货公司</td>
+<td align=center> &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+</table>
+
+<br>
+<p align="center"><strong><font size="4">客运列车编组通知单</strong></p>
+<table width=100% cellpadding=1 cellspacing=0 border=0 >
+<tr>
+<td>郑州站</td>
+		<td >2015-09-02 07:20</td>
+        <td align="right">1304次列车</td>		
+		<td align="right">郑担当0号机车</td>
+
+  </tr>
+      <tr>
+                <td>车站制表者： 阎建民</td>
+		<td>车站值班员： 0</td>
+		<td align="right">运转车长所属单位： 0</td>
+		<td align="right">运转车长： 0</td>
+      </tr>
+</table>
+<table width=100% cellpadding=1 cellspacing=0 border=1 class=listtable>
+<tr><th width=10% colspan=1 rowspan="3" class=th    align=center>站名</th>
+<th width=14% rowspan="1" class=th colspan="2"  align=center>牵引重量(吨)</th>
+
+        <th width=32% height="24" class=th colspan="7"   align=center>辆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数</th>
+        <th width=7% rowspan="3" class=th   align=center>换长</th>
+        <th width=7% rowspan="3" class=th   align=center>记事</th>
+</tr>
+<tr>
+        <th width=7% rowspan="2" class=th   align=center>载重</th>
+        <th width=7% rowspan="2" class=th   align=center>总重</th>
+        <th width=5%  rowspan="2" class=th    align=center>合计</th>
+        <th width=27% height="24" colspan="6" class=th   align=center>其&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中</th>
+</tr>
+<tr><th width=7% colspan=1  class=th   align=center>基本编组</th>
+        <th width=7% height="24" class=th   align=center>加挂企业1及辆数</th>
+        <th width=7%  class=th  align=center>加挂企业2及辆数</th>
+        <th width=6% class=th   align=center>其它客车</th>
+	<th width=6%    class=th align=center>货车辆数</th>
+        <th width=6%   class=th  align=center>其他辆数</th>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td bgcolor="#ffffff" align=center>郑州</td>
+<td bgcolor="#ffffff" align=center><script>trimData('146.00')</script></td>
+<td bgcolor="#ffffff" align=center><script>trimData('1045.00')</script></td>
+<td bgcolor="#ffffff" align=center>19</td>
+<td bgcolor="#ffffff" align=center>19</td>
+<td bgcolor="#ffffff" align=center>&nbsp;0</td>
+<td bgcolor="#ffffff" align=center>&nbsp;0</td>
+<td bgcolor="#ffffff" align=center>0</td>
+<td bgcolor="#ffffff" align=center>0</td>
+<td bgcolor="#ffffff" align=center>0</td>
+<td bgcolor="#ffffff" align=center><script>trimData('45.60')</script></td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+<td bgcolor="#ffffff" align=center>&nbsp;</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center >中铁快运公司</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center>集装箱公司</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+<tr onmouseover="TableMouseOver(this)" onmouseout="TableMouseOut(this)">
+<td align=center>特货公司</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center>  &nbsp;</td>
+<td align=center> &nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+<td align=center><script>trimData(' ')</script>&nbsp;</td>
+<td align=center>&nbsp;</td>
+</tr>
+</table>
+<br>
+</center></div>
+<hr style="color:#000000;" size=1 noshade>
+<div align="right">
+  <input type="button" name=getback3 onClick="history.go(-1)" class="btn" value="返回">
+  <input name="button2" type="button" class=btn onClick="javascript:print();" value="打印当前页">
+  <input type="button" name=getback22 onClick="downloadfile()" class="btn" value="编组文件下载">
+</div>
+<hr style="color:#000000;" size=1 noshade>
+<form method=post target="_blank" action="/kybz/jsp/list-print.jsp" id=form1 name=form1>
+</form>
+</BODY>
+</HTML>
+<script>
+function print()
+{
+form1.submit();
+}
+</script>
